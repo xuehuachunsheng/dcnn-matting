@@ -20,12 +20,19 @@ scikit-learn
 
 1. 
 1.1. Download the images and mattes from `alphamatting.com`.
+
 1.2. Download the `MSCOCO` dataset, then uncompress to any folder.
+
 2. Modify the `config.py` to adapt to your customed environment and parameters.
+
 3. Run `python gen_alpha_from_closed_form.py` to generate the closed form mattes.
+
 4. Run `python gen_alpha_from_sharedmatting.py` to generate the shared matting mattes( Replace the knn matting).
+
 5. Run `python data_prepare.py --stage=gen_composite_images` to generate the composite images.
+
 6. RUN `python data_prepare.py --stage=gen_image_patches` to generate the image patches.
+
 7. RUN `python data_prepare.py --stage=train_val_test_split` to split the train, val, test datasets.
 
 Then we use these patches to train this model.
