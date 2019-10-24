@@ -28,7 +28,7 @@ output_path = './test_outputs/'
 # Model definition
 img_size = (512, 512) # width, height
 model = DCNN(input_tensor=keras.Input(shape=(img_size[1], img_size[0], 5)), output_shape=(img_size[1], img_size[0]))
-model.load_weights('./ckpt/ckpt-.h5')
+model.load_weights('./ckpt/ckpt-20191024-152441.h5')
 
 im = cv2.imread(im_path)
 im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
