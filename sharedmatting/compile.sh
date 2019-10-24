@@ -1,0 +1,1 @@
+g++ -std=c++11 -dynamiclib -fPIC -o sharedmatting.dylib sharedmatting.cpp matting.cpp `pkg-config opencv4 --cflags --libs`

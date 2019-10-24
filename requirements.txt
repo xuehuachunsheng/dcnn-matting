@@ -1,0 +1,6 @@
+numpy==1.14
+tensorflow==1.12.0
+opencv-python
+scipy
+imageio
+scikit-learn
