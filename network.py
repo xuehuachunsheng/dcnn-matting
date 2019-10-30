@@ -5,7 +5,7 @@ models = keras.models
 layers = keras.layers
 optimizers = keras.optimizers
 
-def DCNN(input_tensor=None, output_size=(27, 27)):
+def DCNN(input_tensor=None, output_shape=(27, 27)):
     conv1 = layers.Conv2D(64, (9, 9), padding='valid') # 19x19x64
     conv2 = layers.Conv2D(64, (1, 1), padding='valid') # 19x19x64
     conv3 = layers.Conv2D(64, (1, 1), padding='valid') # 19x19x64
@@ -22,8 +22,8 @@ def DCNN(input_tensor=None, output_size=(27, 27)):
     x = layers.ReLU()(conv4(x))
     x = layers.ReLU()(conv5(x))
     x = conv6(x)
-    if output_size is not None:
-        x = keras.layers.Lambda(lambda a: tf.image.resize_bicubic(x, size=output_size))(x)
+    if output_shape is not None:
+        x = keras.layers.Lambda(lambda a: tf.image.resize_bicubic(x, size=output_shape))(x)
     model = keras.Model(inputs, x) 
     return model
 

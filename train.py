@@ -22,7 +22,7 @@ from config import Config
 # Seed is very important
 seed = 1
 
-class MyGenerator(keras.utils.Sequence):
+class DataGenerator(keras.utils.Sequence):
     def __init__(self, mode='train'):
         gen = keras.preprocessing.image.ImageDataGenerator(preprocessing_function=partial(preprocess_input, data_format='channels_last', mode='tf'))
         if mode == 'train':
@@ -82,9 +82,9 @@ class MyGenerator(keras.utils.Sequence):
         y = c_matte
         return x, y
 
-train_gen = MyGenerator('train')
-val_gen = MyGenerator('val')
-test_gen = MyGenerator('test')
+train_gen = DataGenerator('train')
+val_gen = DataGenerator('val')
+test_gen = DataGenerator('test')
 model = DCNN()
 model.compile(loss=keras.losses.mean_squared_error, optimizer=keras.optimizers.Adam(lr=Config.learning_rate), metrics=[keras.losses.mean_squared_error])
 def callbacks():
