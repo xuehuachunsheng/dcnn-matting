@@ -44,3 +44,7 @@ There are totally 270000 patches for all images.
 ### Demo
 9. RUN `python demo.py` to test one image matting.
 
+
+### Test result
+
+![](./test_outputs/donkey_pred.png)
